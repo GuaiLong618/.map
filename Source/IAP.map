@@ -1,0 +1,568 @@
+###############################################################################
+#
+# IAR ELF Linker V7.10.1.6676/W32 for ARM                 14/Jul/2015  11:49:19
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  F:\github\Embedded_Pi\IAR_Project\Debug\Exe\IAP.out
+#    Map file     =  F:\github\Embedded_Pi\IAR_Project\Debug\List\IAP.map
+#    Command line =  
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\ADC.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\Analog_IO.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\BSP.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\CRC.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\delay.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\Digital_IO.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\DMA.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\EXTI.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\Interrupts.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\LED.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\loop.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\main.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\misc.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\Random.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\RF.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\Serial.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\startup_stm32f10x_md.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_adc.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_bkp.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_crc.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_dac.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_dbgmcu.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_dma.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_exti.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_flash.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_gpio.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_i2c.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_it.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_pwr.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_rcc.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_sdio.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_spi.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_tim.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\stm32f10x_usart.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\SX1278.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\SX1278_LoRa.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\SX1278_LoRa_regConfig.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\SX1278_SPI.o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Obj\system_stm32f10x.o -o
+#        F:\github\Embedded_Pi\IAR_Project\Debug\Exe\IAP.out --map
+#        F:\github\Embedded_Pi\IAR_Project\Debug\List\IAP.map --log libraries
+#        --log_file F:\github\Embedded_Pi\IAR_Project\Debug\List\IAP.log
+#        --config F:\github\Embedded_Pi\IAR_Project\IAP.icf --semihosting
+#        --entry __iar_program_start --redirect
+#        __iar_sh_stdout=__iar_sh_stdout_swo --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+".intvec":
+       place at 0x08000000 { ro section .intvec };
+".noinit .bss .data":
+       place at start of [0x20000000-0x20000fff] { block RAM_block0_Table };
+"CSTACK":
+       place at end of [0x20003000-0x20003f00] { block CSTACK };
+"P1":  place in [from 0x08002000 to 0x0800e7ff] { block ROM_block1_Table };
+"ROM": place in [from 0x0800e800 to 0x0801ff00] { ro };
+
+  Section                 Kind        Address    Size  Object
+  -------                 ----        -------    ----  ------
+".intvec":                                       0xec
+  .intvec                 ro code  0x08000000    0xec  startup_stm32f10x_md.o [1]
+                                 - 0x080000ec    0xec
+
+"P1":                                          0xc800
+  ROM_block1_Table                 0x08002000  0xc800  <Block>
+    .text                 ro code  0x08002000    0x24  printf.o [3]
+    .text                 ro code  0x08002024   0xd6e  xprintffull_nomb.o [3]
+    .text                 ro code  0x08002d94    0x6c  localeconv.o [3]
+    .text                 ro code  0x08002e00     0xe  div.o [3]
+    .text                 ro code  0x08002e0e     0x2  xtls.o [3]
+    .text                 ro code  0x08002e10     0xc  putchar.o [3]
+    Initializer bytes     ro data  0x08002e1c    0x40  <for rw section .data-2>
+    Initializer bytes     ro data  0x08002e5c    0x88  <for rw section __DLIB_PERTHREAD-1>
+    .text                 ro code  0x08002ee4    0x14  memset.o [3]
+    .text                 ro code  0x08002ef8    0x16  xprout.o [3]
+    .text                 ro code  0x08002f0e     0x4  low_level_init.o [3]
+    .text                 ro code  0x08002f12     0x4  exit.o [3]
+    .text                 ro code  0x08002f18    0x2e  DblCmpLe.o [4]
+    .text                 ro code  0x08002f48    0x2e  DblCmpGe.o [4]
+    .text                 ro code  0x08002f78    0x58  DblToI32.o [4]
+    .text                 ro code  0x08002fd0   0x246  DblDiv.o [4]
+    .text                 ro code  0x08003218   0x1a2  DblMul.o [4]
+    .text                 ro code  0x080033bc   0x180  DblSub.o [4]
+    .text                 ro code  0x0800353c    0xd4  DblAdd.o [4]
+    .text                 ro code  0x08003610    0x30  I32ToDbl.o [4]
+    .text                 ro code  0x08003640   0x10c  xdscale.o [4]
+    .text                 ro code  0x0800374c    0x42  xdnorm.o [4]
+    .text                 ro code  0x08003790    0x1a  cmain.o [5]
+    .text                 ro code  0x080037aa    0x22  zero_init3.o [5]
+    .text                 ro code  0x080037cc    0x28  data_init.o [5]
+    .text                 ro code  0x080037f4    0x66  ABImemset.o [5]
+    .text                 ro code  0x0800385a    0x2e  copy_init3.o [5]
+    .text                 ro code  0x08003888     0xa  cexit.o [5]
+    .text                 ro code  0x08003894    0x76  ABImemcpy_unaligned.o [5]
+    .text                 ro code  0x0800390c    0xee  I64DivMod.o [5]
+    .text                 ro code  0x080039fc     0x2  I64DivZer.o [5]
+    .text                 ro code  0x08003a00    0x58  memchr.o [5]
+    .text                 ro code  0x08003a58    0x16  strchr.o [5]
+    .text                 ro code  0x08003a70    0x36  strlen.o [5]
+    .text                 ro code  0x08003aa6     0xc  cstartup_M.o [5]
+    .rodata               const    0x08003ab2     0x0  zero_init3.o [5]
+    .rodata               const    0x08003ab2     0x0  copy_init3.o [5]
+    .text                 ro code  0x08003ab4    0x14  exit.o [6]
+	
+    ROM_block1_Table      const    0x08003ac8  0xad38  <Block tail>
+                                 - 0x0800e800  0xc800
+
+"ROM":                                         0x24f9
+  .text                   ro code  0x0800e800   0x624  stm32f10x_adc.o [1]
+  .text                   ro code  0x0800ee24    0x60  main.o [1]
+  .text                   ro code  0x0800ee84   0x150  stm32f10x_rcc.o [1]
+  .text                   ro code  0x0800efd4   0x1bc  BSP.o [1]
+  .text                   ro code  0x0800f190    0x20  loop.o [1]
+  .text                   ro code  0x0800f1b0    0xe4  misc.o [1]
+  .text                   ro code  0x0800f294   0x5a4  stm32f10x_gpio.o [1]
+  .text                   ro code  0x0800f838    0x64  DMA.o [1]
+  .text                   ro code  0x0800f89c    0x98  ADC.o [1]
+  .text                   ro code  0x0800f934    0x68  LED.o [1]
+  .text                   ro code  0x0800f99c   0x33c  SX1278_LoRa.o [1]
+  .text                   ro code  0x0800fcd8     0xe  RF.o [1]
+  .rodata                 const    0x0800fce6     0x1  LED.o [1]
+  .rodata                 const    0x0800fce7     0x1  SX1278_LoRa.o [1]
+  .text                   ro code  0x0800fce8   0x43c  stm32f10x_dma.o [1]
+  .text                   ro code  0x08010124    0x7c  Digital_IO.o [1]
+  .text                   ro code  0x080101a0    0x54  delay.o [1]
+  .text                   ro code  0x080101f4   0x1bc  stm32f10x_exti.o [1]
+  .text                   ro code  0x080103b0    0x3c  EXTI.o [1]
+  .text                   ro code  0x080103ec   0x128  SX1278_SPI.o [1]
+  .rodata                 const    0x08010514   0x170  Digital_IO.o [1]
+  .text                   ro code  0x08010684   0x158  system_stm32f10x.o [1]
+  .text                   ro code  0x080107dc    0x80  stm32f10x_it.o [1]
+  .rodata                 const    0x0801085c    0x50  stm32f10x_adc.o [1]
+  .rodata                 const    0x080108ac    0x50  stm32f10x_dma.o [1]
+  .rodata                 const    0x080108fc    0x50  stm32f10x_exti.o [1]
+  .rodata                 const    0x0801094c    0x50  stm32f10x_gpio.o [1]
+  .rodata                 const    0x0801099c    0x50  stm32f10x_rcc.o [1]
+  .rodata                 const    0x080109ec    0x48  misc.o [1]
+  .rodata                 const    0x08010a34    0x48  SX1278_LoRa_regConfig.o [1]
+  .rodata                 const    0x08010a7c    0x44  SX1278_LoRa.o [1]
+  .rodata                 const    0x08010ac0    0x40  SX1278_SPI.o [1]
+  .rodata                 const    0x08010b00    0x30  main.o [1]
+  .iar.init_table         const    0x08010b30    0x4c  - Linker created -
+  .rodata                 const    0x08010b7c    0x20  BSP.o [1]
+  .rodata                 const    0x08010b9c    0x1c  BSP.o [1]
+  .rodata                 const    0x08010bb8    0x1c  BSP.o [1]
+  .rodata                 const    0x08010bd4    0x1c  SX1278_LoRa.o [1]
+  .rodata                 const    0x08010bf0    0x1c  SX1278_LoRa.o [1]
+  .rodata                 const    0x08010c0c    0x14  SX1278_LoRa.o [1]
+  .rodata                 const    0x08010c20    0x10  BSP.o [1]
+  .rodata                 const    0x08010c30    0x10  SX1278_LoRa.o [1]
+  .text                   ro code  0x08010c40    0x10  startup_stm32f10x_md.o [1]
+  .rodata                 const    0x08010c50     0x8  BSP.o [1]
+  .text                   ro code  0x08010c58     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c5c     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c60     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c64     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c68     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c6c     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c70     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c74     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c78     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c7c     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c80     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c84     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c88     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c8c     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c90     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c94     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c98     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010c9c     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010ca0     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010ca4     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010ca8     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cac     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cb0     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cb4     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cb8     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cbc     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cc0     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cc4     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cc8     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010ccc     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cd0     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cd4     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cd8     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cdc     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010ce0     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010ce4     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010ce8     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cec     0x4  startup_stm32f10x_md.o [1]
+  .text                   ro code  0x08010cf0     0x4  startup_stm32f10x_md.o [1]
+  Initializer bytes       ro data  0x08010cf4     0x4  <for rw section .data-1>
+  .rodata                 const    0x08010cf8     0x1  SX1278_LoRa_regConfig.o [1]
+                                 - 0x08010cf9  0x24f9
+
+".noinit .bss .data":                           0x800
+  RAM_block0_Table                 0x20000000   0x800  <Block>
+    .bss                  zero     0x20000000     0x4  BSP.o [1]
+    .bss                  zero     0x20000004     0x4  Random.o [1]
+    .bss                  zero     0x20000008   0x214  SX1278_LoRa.o [1]
+    .bss                  zero     0x2000021c    0x50  xfiles.o [3]
+    rw section __DLIB_PERTHREAD-1
+                                   0x2000026c    0x88  <Init block>
+      __DLIB_PERTHREAD    inited   0x2000026c    0x88  localeconv.o [3]
+    rw section .data-1             0x200002f4     0x4  <Init block>
+      .data               inited   0x200002f4     0x4  system_stm32f10x.o [1]
+    rw section .data-2             0x200002f8    0x40  <Init block>
+      .data               inited   0x200002f8    0x40  xfiles.o [3]
+    RAM_block0_Table      uninit   0x20000338   0x4c8  <Block tail>
+                                 - 0x20000800   0x800
+
+"CSTACK":                                       0xf00
+  CSTACK                           0x20003000   0xf00  <Block>
+    CSTACK                uninit   0x20003000   0xf00  <Block tail>
+                                 - 0x20003f00   0xf00
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x26c:
+          0x20000000  0x26c
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x88:
+          0x08002e5c   0x88
+    1 destination range, total size 0x88:
+          0x2000026c   0x88
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+          0x08010cf4    0x4
+    1 destination range, total size 0x4:
+          0x200002f4    0x4
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x40:
+          0x08002e1c   0x40
+    1 destination range, total size 0x40:
+          0x200002f8   0x40
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                   ro code  ro data  rw data
+    ------                   -------  -------  -------
+F:\github\Embedded_Pi\IAR_Project\Debug\Obj: [1]
+    ADC.o                        152
+    BSP.o                        444      112        4
+    DMA.o                        100
+    Digital_IO.o                 124      368
+    EXTI.o                        60
+    LED.o                        104        1
+    RF.o                          14
+    Random.o                                         4
+    SX1278_LoRa.o                828      161      532
+    SX1278_LoRa_regConfig.o                73
+    SX1278_SPI.o                 296       64
+    delay.o                       84
+    loop.o                        32
+    main.o                        96       48
+    misc.o                       228       72
+    startup_stm32f10x_md.o       408
+    stm32f10x_adc.o            1 572       80
+    stm32f10x_dma.o            1 084       80
+    stm32f10x_exti.o             444       80
+    stm32f10x_gpio.o           1 444       80
+    stm32f10x_it.o               128
+    stm32f10x_rcc.o              336       80
+    system_stm32f10x.o           344        4        4
+    --------------------------------------------------
+    Total:                     8 322    1 303      544
+
+command line: [2]
+    --------------------------------------------------
+    Total:
+
+dl7M_tlf.a: [3]
+    div.o                         14
+    exit.o                         4
+    localeconv.o                 108      136      136
+    low_level_init.o               4
+    memset.o                      20
+    printf.o                      36
+    putchar.o                     12
+    xfiles.o                               64      144
+    xprintffull_nomb.o         3 438
+    xprout.o                      22
+    xtls.o                         2
+    --------------------------------------------------
+    Total:                     3 660      200      280
+
+m7M_tl.a: [4]
+    DblAdd.o                     212
+    DblCmpGe.o                    46
+    DblCmpLe.o                    46
+    DblDiv.o                     582
+    DblMul.o                     418
+    DblSub.o                     384
+    DblToI32.o                    88
+    I32ToDbl.o                    48
+    xdnorm.o                      66
+    xdscale.o                    268
+    --------------------------------------------------
+    Total:                     2 158
+
+rt7M_tl.a: [5]
+    ABImemcpy_unaligned.o        118
+    ABImemset.o                  102
+    I64DivMod.o                  238
+    I64DivZer.o                    2
+    cexit.o                       10
+    cmain.o                       26
+    copy_init3.o                  46
+    cstartup_M.o                  12
+    data_init.o                   40
+    memchr.o                      88
+    strchr.o                      22
+    strlen.o                      54
+    zero_init3.o                  34
+    --------------------------------------------------
+    Total:                       792
+
+shb_l.a: [6]
+    exit.o                        20
+    --------------------------------------------------
+    Total:                        20
+
+    Gaps                          26
+    Linker created                     44 420    5 064
+------------------------------------------------------
+    Grand Total:              14 978   45 923    5 888
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x08003791         Code  Gb  cmain.o [5]
+ADC1_setup              0x0800f89d   0x98  Code  Gb  ADC.o [1]
+ADC_Cmd                 0x0800ea1d   0x5c  Code  Gb  stm32f10x_adc.o [1]
+ADC_DMACmd              0x0800ea79   0x54  Code  Gb  stm32f10x_adc.o [1]
+ADC_DeInit              0x0800e801   0x80  Code  Gb  stm32f10x_adc.o [1]
+ADC_GetCalibrationStatus
+                        0x0800eb71   0x40  Code  Gb  stm32f10x_adc.o [1]
+ADC_GetResetCalibrationStatus
+                        0x0800eaff   0x40  Code  Gb  stm32f10x_adc.o [1]
+ADC_Init                0x0800e881  0x19c  Code  Gb  stm32f10x_adc.o [1]
+ADC_RegularChannelConfig
+                        0x0800ec0d  0x1fa  Code  Gb  stm32f10x_adc.o [1]
+ADC_ResetCalibration    0x0800eacd   0x32  Code  Gb  stm32f10x_adc.o [1]
+ADC_SoftwareStartConvCmd
+                        0x0800ebb1   0x5c  Code  Gb  stm32f10x_adc.o [1]
+ADC_StartCalibration    0x0800eb3f   0x32  Code  Gb  stm32f10x_adc.o [1]
+BSP                     0x0800f0b1   0x96  Code  Gb  BSP.o [1]
+BusFault_Handler        0x080107e3    0x2  Code  Gb  stm32f10x_it.o [1]
+CSTACK$$Base            0x20003000          --   Gb  - Linker created -
+CSTACK$$Limit           0x20003f00          --   Gb  - Linker created -
+DMA1_setup              0x0800f839   0x64  Code  Gb  DMA.o [1]
+DMA_Cmd                 0x08010043   0xa6  Code  Gb  stm32f10x_dma.o [1]
+DMA_DeInit              0x0800fce9  0x1c0  Code  Gb  stm32f10x_dma.o [1]
+DMA_Init                0x0800fea9  0x19a  Code  Gb  stm32f10x_dma.o [1]
+DebugMon_Handler        0x080107e9    0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI15_10_IRQHandler    0x08010835   0x24  Code  Gb  stm32f10x_it.o [1]
+EXTI1_IRQHandler        0x080107fd   0x1c  Code  Gb  stm32f10x_it.o [1]
+EXTI9_5_IRQHandler      0x08010819   0x1c  Code  Gb  stm32f10x_it.o [1]
+EXTI_ClearITPendingBit  0x08010377   0x1e  Code  Gb  stm32f10x_exti.o [1]
+EXTI_GetITStatus        0x080102db   0x9c  Code  Gb  stm32f10x_exti.o [1]
+EXTI_IE                 0x080103b1   0x3c  Code  Gb  EXTI.o [1]
+EXTI_Init               0x080101f5   0xe6  Code  Gb  stm32f10x_exti.o [1]
+EXTI_setup              0x0800f075    0x2  Code  Lc  BSP.o [1]
+GPIO_AFIODeInit         0x0800f395   0x14  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_DeInit             0x0800f295  0x100  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_EXTILineConfig     0x0800f741   0xf0  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_Init               0x0800f3a9  0x1b2  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ReadInputDataBit   0x0800f55b   0xe0  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_WriteBit           0x0800f63b   0xe6  Code  Gb  stm32f10x_gpio.o [1]
+HardFault_Handler       0x080107df    0x2  Code  Gb  stm32f10x_it.o [1]
+ITM_SendChar            0x0800ee25   0x22  Code  Lc  main.o [1]
+LED_Blink               0x0800f947   0x2c  Code  Gb  LED.o [1]
+LED_off                 0x0800f985   0x12  Code  Gb  LED.o [1]
+LED_on                  0x0800f973   0x12  Code  Gb  LED.o [1]
+LED_pinMap              0x0800fce6    0x1  Data  Gb  LED.o [1]
+LED_setup               0x0800f935   0x12  Code  Gb  LED.o [1]
+MemManage_Handler       0x080107e1    0x2  Code  Gb  stm32f10x_it.o [1]
+NMI_Handler             0x080107dd    0x2  Code  Gb  stm32f10x_it.o [1]
+NVIC_Init               0x0800f1e5   0x98  Code  Gb  misc.o [1]
+NVIC_PriorityGroupConfig
+                        0x0800f1b1   0x34  Code  Gb  misc.o [1]
+NVIC_SetPriority        0x0800efd5   0x26  Code  Lc  BSP.o [1]
+NVIC_setup              0x0800f02d   0x48  Code  Lc  BSP.o [1]
+PendSV_Handler          0x080107eb    0x2  Code  Gb  stm32f10x_it.o [1]
+RAM_block0_Table$$Base  0x20000000          --   Gb  - Linker created -
+RAM_block0_Table$$Limit
+                        0x20000800          --   Gb  - Linker created -
+RCC_ADCCLKConfig        0x0800ee85   0x3e  Code  Gb  stm32f10x_rcc.o [1]
+RCC_AHBPeriphClockCmd   0x0800eec3   0x5a  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x0800ef1d   0x4e  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphResetCmd  0x0800ef6b   0x4e  Code  Gb  stm32f10x_rcc.o [1]
+RF_test                 0x0800fcd9    0xe  Code  Gb  RF.o [1]
+ROM_block1_Table$$Base  0x08002000          --   Gb  - Linker created -
+ROM_block1_Table$$Limit
+                        0x0800e800          --   Gb  - Linker created -
+Region$$Table$$Base     0x08010b30          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08010b7c          --   Gb  - Linker created -
+SVC_Handler             0x080107e7    0x2  Code  Gb  stm32f10x_it.o [1]
+SX1278_LoRa             0x20000008  0x214  Data  Gb  SX1278_LoRa.o [1]
+SX1278_LoRa_MCU_ExtIntISR
+                        0x0800f99d   0x12  Code  Gb  SX1278_LoRa.o [1]
+SX1278_LoRa_MCU_ExtInt_disable
+                        0x0800f9f9   0x16  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_MCU_ExtInt_enable
+                        0x0800f9e3   0x16  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_MCU_ExtInt_init
+                        0x0800f9af   0x34  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_deBug       0x0800fca3   0x10  Code  Gb  SX1278_LoRa.o [1]
+SX1278_LoRa_fixedLength_readFIFO
+                        0x0800faab   0x34  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_flushFIFO   0x0800fa85   0x26  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_payloadSize
+                        0x0800fce7    0x1  Data  Gb  SX1278_LoRa.o [1]
+SX1278_LoRa_pinMode     0x0800fa0f   0x3c  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_readRegSetting
+                        0x0800fb23   0x56  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_regConfigTab1
+                        0x08010a34   0x48  Data  Gb  SX1278_LoRa_regConfig.o [1]
+SX1278_LoRa_regNumber   0x08010cf8    0x1  Data  Gb  SX1278_LoRa_regConfig.o [1]
+SX1278_LoRa_regSetting  0x0800fadf   0x30  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_setDioMapping
+                        0x0800fb0f   0x14  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_setMode     0x0800fa4b   0x3a  Code  Lc  SX1278_LoRa.o [1]
+SX1278_LoRa_setup       0x0800fb79   0xac  Code  Gb  SX1278_LoRa.o [1]
+SX1278_SPI_byte         0x080104bd   0x58  Code  Lc  SX1278_SPI.o [1]
+SX1278_fixedLength_Recv
+                        0x0800fc25   0x7e  Code  Gb  SX1278_LoRa.o [1]
+SX1278_readFIFO         0x0801045f   0x58  Code  Gb  SX1278_SPI.o [1]
+SX1278_readReg          0x08010425   0x3a  Code  Gb  SX1278_SPI.o [1]
+SX1278_writeReg         0x080103ed   0x38  Code  Gb  SX1278_SPI.o [1]
+SetSysClock             0x080106d9    0x8  Code  Lc  system_stm32f10x.o [1]
+SetSysClockTo72         0x080106e1   0xe0  Code  Lc  system_stm32f10x.o [1]
+SysTick_Config          0x0800effb   0x32  Code  Lc  BSP.o [1]
+SysTick_Handler         0x080107ed    0xc  Code  Gb  stm32f10x_it.o [1]
+SysTick_setup           0x0800f077   0x3a  Code  Lc  BSP.o [1]
+SystemCoreClock         0x200002f4    0x4  Data  Gb  system_stm32f10x.o [1]
+SystemInit              0x08010685   0x54  Code  Gb  system_stm32f10x.o [1]
+USART1_IRQHandler       0x08010859    0x4  Code  Gb  stm32f10x_it.o [1]
+UsageFault_Handler      0x080107e5    0x2  Code  Gb  stm32f10x_it.o [1]
+_GenldFullNoMb          0x08002b01  0x24a  Code  Lc  xprintffull_nomb.o [3]
+_LdtobFullNoMb          0x08002715  0x3e6  Code  Lc  xprintffull_nomb.o [3]
+_LitobFullNoMb          0x0800260d  0x106  Code  Lc  xprintffull_nomb.o [3]
+_Locale_aeabi_lconv     0x200002bc   0x38  Data  Gb  localeconv.o [3]
+_Locale_lconv           0x2000026c   0x50  Data  Gb  localeconv.o [3]
+_PrintfFullNoMb         0x08002025  0x5e2  Code  Gb  xprintffull_nomb.o [3]
+_Prout                  0x08002ef9   0x16  Code  Gb  xprout.o [3]
+_PutcharsFullNoMb       0x08002d4b   0x2e  Code  Lc  xprintffull_nomb.o [3]
+__ICFEDIT_intvec_start__ {Abs}
+                        0x08000000          --   Gb  command line/config [2]
+__aeabi_cdcmple         0x08002f19         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x08002f49         Code  Gb  DblCmpGe.o [4]
+__aeabi_d2iz            0x08002f79         Code  Gb  DblToI32.o [4]
+__aeabi_d2uiz           0x08002fa5         Code  Gb  DblToI32.o [4]
+__aeabi_ddiv            0x08002fd1         Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x08003219         Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x080033bd         Code  Gb  DblSub.o [4]
+__aeabi_i2d             0x08003611         Code  Gb  I32ToDbl.o [4]
+__aeabi_ldiv0           0x080039fd         Code  Gb  I64DivZer.o [5]
+__aeabi_memset          0x080037f5         Code  Gb  ABImemset.o [5]
+__aeabi_ui2d            0x08003625         Code  Gb  I32ToDbl.o [4]
+__aeabi_uldivmod        0x0800390d         Code  Gb  I64DivMod.o [5]
+__cmain                 0x08003791         Code  Gb  cmain.o [5]
+__exit                  0x08003ab5   0x14  Code  Gb  exit.o [6]
+__iar_Dnorm             0x0800374d   0x42  Code  Gb  xdnorm.o [4]
+__iar_Dscale            0x08003641  0x10c  Code  Gb  xdscale.o [4]
+__iar_Locale_lconv_init
+                        0x08002d95   0x3a  Code  Gb  localeconv.o [3]
+__iar_Memchr            0x08003a01         Code  Gb  memchr.o [5]
+__iar_Memset            0x080037f5         Code  Gb  ABImemset.o [5]
+__iar_Memset_word       0x080037fd         Code  Gb  ABImemset.o [5]
+__iar_Stdout            0x200002f8   0x40  Data  Gb  xfiles.o [3]
+__iar_Strchr            0x08003a59         Code  Gb  strchr.o [5]
+__iar_copy_init3        0x0800385b   0x2e  Code  Gb  copy_init3.o [5]
+__iar_d2uiz             0x08002fb1         Code  Gb  DblToI32.o [4]
+__iar_dadd              0x0800353d         Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x080037cd   0x28  Code  Gb  data_init.o [5]
+__iar_dlib_perthread_access
+                        0x08002e0f    0x2  Code  Gb  xtls.o [3]
+__iar_dsub              0x080033d1         Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x080033e3         Code  Gb  DblSub.o [4]
+__iar_program_start     0x08003aa7         Code  Gb  cstartup_M.o [5]
+__iar_ui2d              0x08003629         Code  Gb  I32ToDbl.o [4]
+__iar_unaligned___aeabi_memcpy
+                        0x08003895         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy4
+                        0x080038b5         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy8
+                        0x080038b5         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_zero_init3        0x080037ab   0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x08002f0f    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000         Data  Gb  startup_stm32f10x_md.o [1]
+_call_main              0x0800379d         Code  Gb  cmain.o [5]
+_exit                   0x08003889         Code  Gb  cexit.o [5]
+_main                   0x080037a7         Code  Gb  cmain.o [5]
+assert_failed           0x0800ee65   0x12  Code  Gb  main.o [1]
+delayMs                 0x080101c9   0x2c  Code  Gb  delay.o [1]
+delayUs                 0x080101a1   0x28  Code  Gb  delay.o [1]
+digitalRead             0x08010177   0x24  Code  Gb  Digital_IO.o [1]
+digitalWrite            0x08010153   0x24  Code  Gb  Digital_IO.o [1]
+div                     0x08002e01    0xe  Code  Gb  div.o [3]
+exit                    0x08002f13    0x4  Code  Gb  exit.o [3]
+fputc                   0x0800ee55   0x10  Code  Gb  main.o [1]
+localeconv              0x08002dcf   0x16  Code  Gb  localeconv.o [3]
+loop                    0x0800f191   0x20  Code  Gb  loop.o [1]
+main                    0x0800ee47    0xe  Code  Gb  main.o [1]
+memchr                  0x08003a01         Code  Gb  memchr.o [5]
+memset                  0x08002ee5   0x14  Code  Gb  memset.o [3]
+obuf                    0x2000021c   0x50  Data  Lc  xfiles.o [3]
+pinMap                  0x08010514  0x170  Data  Lc  Digital_IO.o [1]
+pinMode                 0x08010125   0x2e  Code  Gb  Digital_IO.o [1]
+printf                  0x08002001   0x24  Code  Gb  printf.o [3]
+putchar                 0x08002e11    0xc  Code  Gb  putchar.o [3]
+randomSeedValue         0x20000004    0x4  Data  Gb  Random.o [1]
+strchr                  0x08003a59         Code  Gb  strchr.o [5]
+strlen                  0x08003a71         Code  Gb  strlen.o [5]
+timer                   0x20000000    0x4  Data  Gb  BSP.o [1]
+
+
+[1] = F:\github\Embedded_Pi\IAR_Project\Debug\Obj
+[2] = command line
+[3] = dl7M_tlf.a
+[4] = m7M_tl.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  14 978 bytes of readonly  code memory
+  45 923 bytes of readonly  data memory
+   5 888 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
