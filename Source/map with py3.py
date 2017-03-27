@@ -6,16 +6,16 @@
 import os 
 import sys
 import time
-from __builtin__ import dict
+#from __builtin__ import dict
 from _ast import Dict
 
-print "fucking high!"
-print "author: Jr "
+print ("fucking high!")
+print ("author: Jr ")
 
 # read file per line
-f = open('', 'r')
-print f
-print "\r\n"
+f = open(r'C:\Users\Administrator\Desktop\PRJ.map','r')
+print (f)
+print ("\r\n")
 
 # dataDict = {}
 # codeDict = {}
@@ -80,15 +80,15 @@ while True:
         else: 
             existing = ("*** ENTRY LIST") in line
             if existing:
-                print "*** ENTRY LIST"
+                print ("*** ENTRY LIST")
             else:
                 pass
 
 
-print "ARM memory map"
+print ("ARM memory map")
 for k,v in sorted(dict.items(), key=lambda d:d[0]):
 #     print k,','
-    print v, 
+    print (v) 
     
 f.close()
 
